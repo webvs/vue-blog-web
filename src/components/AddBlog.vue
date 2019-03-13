@@ -62,9 +62,7 @@
         <p>博客分类：</p>
 
         <ul>
-
             <li v-for="category in blog.categories" :key="category">{{category}}</li>
-
         </ul>
 
         <p>作者：{{blog.author}}</p>
@@ -90,6 +88,7 @@
 //http://jsonplaceholder.typicode.com/
 
 //http://jsonplaceholder.typicode.com/posts
+import axios from 'axios';
 
 export default {
 
@@ -125,19 +124,11 @@ export default {
 
         post() {
 
-            this.$http
+            //this.$http
+            axios
+            .post("https://wd9712169819gawpax.wilddogio.com/posts.json", this.blog) //加上posts.json是在该地址下创建一个文件名
 
-                .post("http://jsonplaceholder.typicode.com/posts", {
-
-                    title: this.blog.title,
-
-                    body: this.blog.title,
-
-                    userId: 1
-
-                })
-
-                .then(data => {
+                .then(data => {//箭头函数保证this是上一层的this
 
                     console.log(data);
 
