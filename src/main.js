@@ -5,11 +5,14 @@ import App from './App'
 //import router from './router'
 import routes from './router/index.js'
 import VueResource from 'vue-resource'
-import VueRouter from 'vue-router';
-
+import VueRouter from 'vue-router'
+import axios from 'axios'
 Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(VueRouter)
+//全局设置
+axios.defaults.baseURL='https://wd9712169819gawpax.wilddogio.com'
+//axios.defaults.headers.common['Authorzation']='Token'
 //自定义指令
 Vue.directive('rainbow',{
   bind(el,binding,vnode){
