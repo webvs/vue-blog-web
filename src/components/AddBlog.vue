@@ -126,7 +126,7 @@ export default {
 
             //this.$http
             axios
-            .post("https://wd9712169819gawpax.wilddogio.com/posts.json", this.blog) //加上posts.json是在该地址下创建一个文件名
+            .post("/posts.json", this.blog) //加上posts.json是在该地址下创建一个文件名
 
                 .then(data => {//箭头函数保证this是上一层的this
 

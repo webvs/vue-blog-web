@@ -14,7 +14,7 @@
 
 </template>
 <script>
-import axios from 'axios';
+import axios from '../axios-auth';
 export default {
     name:'show-blogs',
     data(){
@@ -35,7 +35,7 @@ export default {
     //        return data.json()
 
     //     })
-        axios.get('https://wd9712169819gawpax.wilddogio.com/posts.json')
+        axios.get('/posts.json')
         .then(function(data){
            return data.data; //使用axios 不用data.json() 而且要用箭头函数 vue-resoure可不用 箭头函数
 
